@@ -1,0 +1,9 @@
+<h2> Todo List </h2>
+
+{{input value=newTodoText enter=(action 'addTodo')}}
+
+{{#each todosSorted as |todoElement|}}
+  {{todo-list/item todo=todoElement }}
+{{else}}
+  <p>Yeay, you have done all!!! </p>
+{{/each}}
