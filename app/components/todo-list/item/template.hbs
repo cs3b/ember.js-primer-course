@@ -4,7 +4,9 @@
 {{/if}}
 
 <b>
- {{todo-list/estimate todo.estimate todoClass=todoClass}}
+ {{#todo-list/estimate todo.estimate todoClass=todoClass as |estimate|}}
+   <h6> It's really {{estimate}}</h6>
+ {{/todo-list/estimate}}
 </b>
 
 {{todoClass}}

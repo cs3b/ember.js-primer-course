@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 const EstimateComponent = Ember.Component.extend({
   tagName: 'strong',
+  realisticEstimate: Ember.computed('estimate', function() {
+      return this.get('estimate') * 4;
+  }),
 
   didRender() {
     this._super(...arguments); 
