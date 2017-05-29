@@ -1,5 +1,17 @@
 {{yield}}
 {{#if todo.done}}
-🐹
+    🐹
 {{/if}}
+
+<b>
+ {{todo.estimate}}
+</b>
+
 {{todo.name}}
+
+<br/>
+
+<i>
+{{time-ago todo.dueDate}}
+</i>
+

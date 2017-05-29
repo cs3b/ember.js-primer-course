@@ -3,16 +3,21 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service(),
 
+  newTodo: {done: false},
+
   todosOrder: ['done:asc', 'name:asc'],
   todosSorted: Ember.computed.sort('todos', 'todosOrder'),
+
   actions: {
     addTodo() {
-      let newTodoText = this.get('newTodoText');
-      this.get('store').createRecord('todo', {
-        name: newTodoText,
-        done: false
-      }).save();
-      this.set('newTodoText', '');
+      this.newTodo.createdAt = new Date();
+      this.newTodo.dueDate = new Date(this.newTodo.dueDate);
+
+      this.get('store').createRecord('todo', this.newTodo).save();
+
+      this.set('newTodo.name', '');
+      this.set('newTodo.dueDate', '');
+      this.set('newTodo.estimate', '');
     }
   }
 });

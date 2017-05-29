@@ -1,6 +1,10 @@
 <h2> Todo List </h2>
 
-{{input value=newTodoText enter=(action 'addTodo')}}
+{{input value=newTodo.name placeholder='title'}}
+{{input value=newTodo.dueDate type='date' placeholder='due date'}}
+{{input value=newTodo.estimate type='number' placeholder='estimate'}}
+
+<button {{action 'addTodo'}}>Add</button>
 
 {{#each todosSorted as |todoElement|}}
   {{todo-list/item todo=todoElement }}
