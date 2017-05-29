@@ -4,3 +4,11 @@ li {
     margin: 0.2em;
     list-style: none;
 }
+
+li.red {
+    color: red;
+}
+
+li.green {
+    color: green;
+}
